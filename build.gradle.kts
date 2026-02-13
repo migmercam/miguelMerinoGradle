@@ -54,5 +54,9 @@ tasks.register("llmInfo"){
     group ="ollama"
     description="Combinamos dos tareas y nos dara la version de ollama y nos dira que modelo tenemos en ejecucion"
     dependsOn("ollamaVersion","ollamaPs")
-
+    doLast {
+        println("-------------------------")
+        println("Demo finalizada")
+        println("-------------------------")
+    }
 }
