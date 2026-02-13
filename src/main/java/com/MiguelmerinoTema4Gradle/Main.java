@@ -12,7 +12,7 @@ public class Main {
         var model = OpenAiChatModel.builder()
                 .baseUrl("http://localhost:11434/v1")
                 .apiKey(TOKEN)
-                .modelName("llama3.1:8b")
+                .modelName("gemma:2b")
                 .build();
         String respuesta = model.chat("Cuéntame un chiste");
         System.out.println(respuesta);
