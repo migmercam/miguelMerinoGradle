@@ -34,3 +34,25 @@ tasks.withType<JavaExec> {
 tasks.test {
     useJUnitPlatform()
 }
+//En este apartado ponemos las tareas
+//Registramos la tarea y ponemos lo que hace en la descripcion y y la line de comandos
+tasks.register<Exec>("ollamaVersion"){
+    group="ollama"
+    description = "Muestra la version de Ollama"
+    //Adaptamos la linea de comandos porque gasto windows
+    commandLine("cmd","/c","ollama --version")
+}
+//Registramos la siguiente tarea que nos dice que modelo tenemos en ejecucion
+tasks.register<Exec>("ollamaPs"){
+    group ="ollama"
+    description="Muestra los modelos que estamos ejecutando"
+    //Adaptamos para windows
+    commandLine("cmd","/c","ollama ps")
+}
+//Registramos la tercera que es una comvinacion de las dos
+tasks.register("llmInfo"){
+    group ="ollama"
+    description="Combinamos dos tareas y nos dara la version de ollama y nos dira que modelo tenemos en ejecucion"
+    dependsOn("ollamaVersion","ollamaPs")
+
+}
