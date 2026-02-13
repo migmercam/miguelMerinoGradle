@@ -1,12 +1,16 @@
 plugins {
     id("java")
+    application
 }
 
 group = "com.MiguelmerinoTema4Gradle"
 version = "1.0-SNAPSHOT"
-
+application {
+    mainClass.set("com.MiguelmerinoTema4Gradle.Main")
+}
 repositories {
     mavenCentral()
+
 }
 
 dependencies {
